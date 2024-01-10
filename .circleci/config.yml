@@ -104,38 +104,38 @@ workflows:
       #     context: cpe-unity
 
       # Build for several other platforms
-      # - unity/build:
-      #     name: "build-webgl"
-      #     step-name: "Build WebGL"
-      #     unity-license-var-name: "UNITY_ENCODED_LICENSE"
-      #     unity-username-var-name: "UNITY_USERNAME"
-      #     unity-password-var-name: "UNITY_PASSWORD"
-      #     executor:
-      #       name: "unity/ubuntu"
-      #       target_platform: "webgl"
-      #       editor_version: "2021.3.9f1"
-      #       resource_class: "large"
-      #     project-path: "src"
-      #     build-target: "WebGL"
-      #     # Since "Compression Format" is set to disabled in Unity,
-      #     # if we set "compress" to false, we can play the game from
-      #     # the CircleCI web app by going in the "Artifacts" tab.
-      #     compress: false
-      #     context: cpe-unity
       - unity/build:
-          name: "build-android"
-          step-name: "Build Android"
+          name: "build-webgl"
+          step-name: "Build WebGL"
           # unity-license-var-name: "UNITY_ENCODED_LICENSE"
           # unity-username-var-name: "UNITY_USERNAME"
           # unity-password-var-name: "UNITY_PASSWORD"
           executor:
             name: "unity/ubuntu"
-            target_platform: "android"
-            editor_version: "2021.3.2f1"
+            target_platform: "webgl"
+            editor_version: "2021.3.9f1"
             resource_class: "large"
           project-path: "src"
-          build-target: "Android"
+          build-target: "WebGL"
+          # Since "Compression Format" is set to disabled in Unity,
+          # if we set "compress" to false, we can play the game from
+          # the CircleCI web app by going in the "Artifacts" tab.
+          compress: false
           context: unity
+      # - unity/build:
+      #     name: "build-android"
+      #     step-name: "Build Android"
+      #     unity-license-var-name: "UNITY_ENCODED_LICENSE"
+      #     unity-username-var-name: "UNITY_USERNAME"
+      #     unity-password-var-name: "UNITY_PASSWORD"
+      #     executor:
+      #       name: "unity/ubuntu"
+      #       target_platform: "android"
+      #       editor_version: "2021.3.2f1"
+      #       resource_class: "large"
+      #     project-path: "src"
+      #     build-target: "Android"
+      #     context: unity
       # - unity/build:
       #     name: "build-ios"
       #     step-name: "Build iOS"
