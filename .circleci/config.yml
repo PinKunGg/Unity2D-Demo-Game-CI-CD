@@ -8,9 +8,6 @@ jobs:
         docker:
           - image: unityci/editor:ubuntu-2021.3.19f1-android-3.0.1
         steps:
-          - add_ssh_keys:
-              fingerprints:
-                - "60:d0:c8:1a:8d:eb:89:e2:ac:f1:d0:69:26:c4:e4:02"
           - checkout
           - setup_remote_docker
           - unity/prepare-env:
