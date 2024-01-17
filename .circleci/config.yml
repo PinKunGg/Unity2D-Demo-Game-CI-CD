@@ -20,7 +20,7 @@ jobs:
               project-path: "src"
               build-method: 'MyWorldBuildCommand.CustomBuildAndroid'
           - store_artifacts:
-              path: /root/project/pakapow-mobile/Builds/Android
+              path: /root/project/src/Builds/Android/
 
 workflows:
   build-unity-project:
